@@ -1,0 +1,70 @@
+generated: '2026-08-28'
+method: probed
+source: >-
+  Direct HTTPS probes of every /.well-known/ path in the enrichment contract against
+  both SJSemi web hosts, 2026-08-28. No pointer of type WellKnown or SecurityTxt is
+  emitted from this file: every path either returned 404 or the origin did not answer,
+  so SJSemi serves no .well-known document. This file records a verified ABSENCE.
+note: >-
+  en.sjsemi.com answers 404 with a 548-byte HTML error page for every unmapped path.
+  Several probes returned no response at all (recorded as status null) — the origin is
+  intermittently unreachable from the United States; each was attempted once and not
+  retried, per the pipeline's probe-bounding rule.
+hosts:
+- host: en.sjsemi.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: null
+    file: null
+    note: no response from origin
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: null
+    file: null
+    note: no response from origin
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: null
+    file: null
+    note: no response from origin
+- host: www.sjsemi.com
+  documents:
+  - path: /.well-known/security.txt
+    status: null
+    file: null
+    note: no response from origin
+  - path: /.well-known/openid-configuration
+    status: null
+    file: null
+    note: no response from origin
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: null
+    file: null
+    note: no response from origin
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+summary:
+  documents_served: 0
+  security_txt: false
+  api_catalog: false
+  agent_card: false

@@ -1,7 +1,16 @@
 aid: sjsemi
 name: SJSemi
-description: 'SJSemi is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'SJSemi (SJSemiconductor (Jiangyin) Corp.) is a Chinese semiconductor
+  Middle-End-Of-Line (MEOL) pure-play foundry and outsourced assembly and test (OSAT)
+  provider, founded in 2014 as a joint venture between JCET and SMIC and headquartered
+  in the Jiangyin High-Tech Industrial Development Zone, Jiangsu, with offices in
+  Shanghai and Santa Clara, California. The company operates a 12-inch wafer bumping,
+  wafer-level chip-scale packaging, chip probing and final-test line, and supplies
+  advanced packaging and 3D multi-die integration services — Cu pillar, RDL, fan-out,
+  TSV and silicon interposer 2.5D — into smartphone, 5G communications, high-performance
+  computing, data-center and automotive electronics supply chains. It is a contract
+  manufacturer of physical semiconductor packaging services and publishes no public
+  developer program, API, or machine-readable interface contract.'
 url: https://raw.githubusercontent.com/api-evangelist/sjsemi/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +21,13 @@ created: '2026-08-28'
 modified: '2026-08-28'
 tags:
 - Company
+- Semiconductors
+- Hardware
+- Manufacturing
+- Advanced Packaging
+- Wafer Test
+- OSAT
+- China
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +35,37 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/sjsemi-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://en.sjsemi.com/
+- type: News
+  url: https://en.sjsemi.com/about/23368/
+- type: LLMsTxt
+  url: llms/sjsemi-llms.txt
+x-enrichment:
+  date: '2026-08-28'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    SJSemi is a contract semiconductor manufacturer — a 12-inch MEOL bumping, wafer-test
+    and advanced-packaging foundry — whose corporate site carries only HOME / ABOUT US /
+    SERVICE / SCM / JOIN US / CONTACT US, with no developer, API, or customer-portal
+    section anywhere on it, and whose hosts return 404 for /openapi.json, every
+    /.well-known/ path, robots.txt and sitemap.xml.
+  evidence:
+    - url: https://en.sjsemi.com/
+      status: 200
+    - url: https://en.sjsemi.com/openapi.json
+      status: 404
+    - url: https://en.sjsemi.com/.well-known/agent-card.json
+      status: 404
+    - url: https://en.sjsemi.com/.well-known/api-catalog
+      status: 404
+    - url: https://www.sjsemi.com/robots.txt
+      status: 404
+  checked: '2026-08-28'
